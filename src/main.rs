@@ -27,7 +27,7 @@ fn read_from_file(filename: impl AsRef<Path>) -> Vec<String> {
         .collect()
 }
 
-fn cypher_encode(input: &str, rotation: u8) -> String {
+fn cypher_encode(input: &str, rotation: usize) -> String {
     let mut buffer = String::new();
 
     input.chars().for_each(|ch| {
@@ -41,7 +41,7 @@ fn cypher_encode(input: &str, rotation: u8) -> String {
         buffer.push(
             CHARACTERS
                 .chars()
-                .nth((CHARACTERS.len() - 1) % (i + rotation as usize))
+                .nth((CHARACTERS.len() - 1) % (i + rotation))
                 .unwrap(),
         );
     });
