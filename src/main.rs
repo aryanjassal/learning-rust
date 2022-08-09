@@ -31,19 +31,16 @@ fn cypher_encode(input: &str, rotation: usize) -> String {
     let mut buffer = String::new();
 
     input.chars().for_each(|ch| {
-        if ch == ' ' {
-            buffer.push(' ');
-            return;
+        if !CHARACTERS.contains(ch) {
+            buffer.push(ch);
+        } else {
+            buffer.push(
+                CHARACTERS
+                    .chars()
+                    .nth((CHARACTERS.find(ch).unwrap() + rotation) % (CHARACTERS.len() - 1))
+                    .unwrap(),
+            );
         }
-
-        // let i = CHARACTERS.find(ch).unwrap_or_else(|| CHARACTERS.len());
-        let i = CHARACTERS.find(ch).unwrap();
-        buffer.push(
-            CHARACTERS
-                .chars()
-                .nth((CHARACTERS.len() - 1) % (i + rotation))
-                .unwrap(),
-        );
     });
     buffer
 }

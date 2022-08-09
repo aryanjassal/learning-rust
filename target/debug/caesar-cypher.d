@@ -1,1 +1,1 @@
-/mnt/d/Users/Aryan\ Jassal/Projects/RUST/caesar-cypher/target/debug/caesar-cypher: /mnt/d/Users/Aryan\ Jassal/Projects/RUST/caesar-cypher/src/main.rs
+/home/aryanj/projects/learning-rust/target/debug/caesar-cypher: /home/aryanj/projects/learning-rust/src/main.rs
