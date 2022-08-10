@@ -1,4 +1,10 @@
-This is a bunch of demo text used only for testing purposes. You will be able to see spaces if you have enabled the option, otherwise even spaces will be encrypted into the cypher, making it almost like a 64-bit hash. How cool!
-This is to see if newlines are working as intended.
-Something seems wrong.
-ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890-_ 
+<html>
+  <head>
+    <title>TOP SECRET</title>
+  </head>
+  <body>
+    <h1>TOP SECRET</h1>
+    <h2>do not open</h2>
+    <p>The secrets are hidden within...</p>
+  </body>
+</html>
