@@ -4,16 +4,20 @@ const CHARACTERS: &str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz12
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    let filename = &args[1];
-    let rotation = &args[2].parse().unwrap_or(1);
+    let mode = &args[1];
+    let filename = &args[2];
+    let rotation = &args[3].parse().unwrap_or(1);
     let file_content = fs::read_to_string(filename).unwrap();
 
-    let encoded_text = cypher_encode(&file_content, *rotation);
-
     println!();
-    println!("{}", &encoded_text);
+    if mode == "encrypt" || mode == "e" {
+        println!("{}", cypher_encode(&file_content, *rotation));    
+    } else if mode == "decrypt" || mode == "d" {
+        println!("{}", cypher_encode(&file_content, -(*rotation)));
+    } else {
+        println!("ERROR: mode can only be `encrypt` (e) or `decrypt` (d)")
+    }
     println!();
-    println!("{}", cypher_encode(&encoded_text, -(*rotation)));
 }
 
 fn cypher_encode(input: &str, rotation: isize) -> String {
